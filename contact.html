@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - BotCraft Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        secondary: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary-500 selection:text-white">
+    
+    <custom-navbar></custom-navbar>
+
+    <main class="pt-24 pb-12">
+        <!-- Header -->
+        <section class="container mx-auto px-6 mb-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6">Свяжитесь с нами</h1>
+                <p class="text-xl text-slate-400">Готовы начать проект? Есть вопросы? Мы всегда на связи и рады помочь!</p>
+            </div>
+        </section>
+
+        <!-- Contact Cards -->
+        <section class="container mx-auto px-6 mb-24">
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Telegram -->
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-3xl p-8 text-center hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-20 h-20 bg-primary-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i data-feather="send" class="w-10 h-10 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Telegram</h3>
+                    <p class="text-slate-400 mb-4">Быстрый ответ в течение часа</p>
+                    <button onclick="openCaptchaModal()" class="text-primary-400 hover:text-primary-300 font-semibold flex items-center justify-center gap-2 mx-auto">
+                        Написать @uulest
+                        <i data-feather="external-link" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Email -->
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-3xl p-8 text-center hover:border-secondary-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-20 h-20 bg-secondary-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i data-feather="mail" class="w-10 h-10 text-secondary-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <p class="text-slate-400 mb-4">Для детальных технических заданий</p>
+                    <a href="mailto:hello@botcraft.ru" class="text-secondary-400 hover:text-secondary-300 font-semibold flex items-center justify-center gap-2 mx-auto">
+                        hello@botcraft.ru
+                        <i data-feather="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Working Hours -->
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-3xl p-8 text-center hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-20 h-20 bg-primary-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i data-feather="clock" class="w-10 h-10 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Режим работы</h3>
+                    <p class="text-slate-400 mb-4">Без выходных</p>
+                    <span class="text-slate-300 font-semibold">9:00 - 21:00 МСК</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container mx-auto px-6 mb-24">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Часто задаваемые вопросы</h2>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-800 transition-colors" onclick="toggleFaq(this)">
+                            <span class="font-semibold">Сколько времени занимает разработка?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="hidden px-6 pb-4 text-slate-400">
+                            Средний срок разработки простого бота — 3-5 дней. Сложные проекты с интеграциями занимают 2-4 недели. Срочная разработка возможна за 24 часа с доплатой 50%.
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-800 transition-colors" onclick="toggleFaq(this)">
+                            <span class="font-semibold">Как происходит оплата?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="hidden px-6 pb-4 text-slate-400">
+                            Работаем по предоплате 50%. После демонстрации готового бота — оплата оставшейся суммы. Принимаем переводы на карту, USDT, а также через безопасную сделку.
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-800 transition-colors" onclick="toggleFaq(this)">
+                            <span class="font-semibold">Предоставляете ли вы исходный код?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="hidden px-6 pb-4 text-slate-400">
+                            Да, по запросу передаем исходный код и документацию. Также помогаем с развертыванием на вашем сервере или предлагаем надежный хостинг у нас.
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-800 transition-colors" onclick="toggleFaq(this)">
+                            <span class="font-semibold">Есть ли гарантия на работу бота?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="hidden px-6 pb-4 text-slate-400">
+                            Да, предоставляем гарантию 30 дней на исправление любых багов бесплатно. Также предлагаем тарифы на постоянную поддержку и обновления.
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-800 transition-colors" onclick="toggleFaq(this)">
+                            <span class="font-semibold">Можно ли доработать бот позже?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="hidden px-6 pb-4 text-slate-400">
+                            Конечно! Мы проектируем архитектуру с учетом масштабирования. Любые доработки и новые функции возможны в любое время по отдельной договоренности.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container mx-auto px-6">
+            <div class="relative bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-12 text-center overflow-hidden">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Готовы начать?</h2>
+                    <p class="text-xl mb-8 opacity-90">Нажмите кнопку ниже, пройдите проверку и получите контакт для связи</p>
+                    <button onclick="openCaptchaModal()" class="bg-white text-slate-900 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105 shadow-2xl inline-flex items-center gap-3">
+                        <i data-feather="message-circle" class="w-6 h-6"></i>
+                        Получить контакт @uulest
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+    <custom-captcha-modal></custom-captcha-modal>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/captcha-modal.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
