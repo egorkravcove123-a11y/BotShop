@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги и цены - BotCraft Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        secondary: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary-500 selection:text-white">
+    
+    <custom-navbar></custom-navbar>
+
+    <main class="pt-24 pb-12">
+        <!-- Header -->
+        <section class="container mx-auto px-6 mb-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6">Тарифы и услуги</h1>
+                <p class="text-xl text-slate-400">Выберите подходящее решение для вашего бизнеса. Все тарифы включают базовую настройку и обучение.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="container mx-auto px-6 mb-24">
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-b from-slate-700 to-slate-800 rounded-3xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
+                    <div class="relative bg-slate-800 border border-slate-700 rounded-3xl p-8 h-full flex flex-col">
+                        <div class="mb-6">
+                            <div class="w-12 h-12 bg-slate-700 rounded-xl flex items-center justify-center mb-4">
+                                <i data-feather="box" class="w-6 h-6 text-slate-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Базовый</h3>
+                            <p class="text-slate-400 text-sm">Для небольших проектов и стартапов</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">от 15 000₽</span>
+                            <span class="text-slate-400">/проект</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>До 5 команд бота</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Простая админ-панель</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>База данных SQLite</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Хостинг 1 месяц</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-500">
+                                <i data-feather="x" class="w-5 h-5 flex-shrink-0"></i>
+                                <span>Интеграция платежей</span>
+                            </li>
+                        </ul>
+                        <button onclick="openCaptchaModal()" class="w-full py-4 bg-slate-700 hover:bg-slate-600 rounded-xl font-semibold transition-colors">
+                            Выбрать тариф
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pro -->
+                <div class="relative group lg:-mt-4 lg:mb-4">
+                    <div class="absolute inset-0 bg-gradient-to-b from-primary-600 to-primary-800 rounded-3xl transform -rotate-1 group-hover:-rotate-2 transition-transform duration-300"></div>
+                    <div class="relative bg-slate-800 border-2 border-primary-500 rounded-3xl p-8 h-full flex flex-col shadow-2xl shadow-primary-500/20">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                Популярный выбор
+                            </span>
+                        </div>
+                        <div class="mb-6 mt-2">
+                            <div class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mb-4">
+                                <i data-feather="star" class="w-6 h-6 text-primary-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Бизнес</h3>
+                            <p class="text-slate-400 text-sm">Оптимально для магазинов и сервисов</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">от 35 000₽</span>
+                            <span class="text-slate-400">/проект</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Неограниченные команды</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Веб-админ-панель</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>PostgreSQL + Redis</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Интеграция платежей</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Хостинг 3 месяца</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>API для интеграций</span>
+                            </li>
+                        </ul>
+                        <button onclick="openCaptchaModal()" class="w-full py-4 bg-primary-600 hover:bg-primary-500 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary-500/25">
+                            Выбрать тариф
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-b from-secondary-700 to-slate-800 rounded-3xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
+                    <div class="relative bg-slate-800 border border-slate-700 rounded-3xl p-8 h-full flex flex-col">
+                        <div class="mb-6">
+                            <div class="w-12 h-12 bg-secondary-500/20 rounded-xl flex items-center justify-center mb-4">
+                                <i data-feather="aperture" class="w-6 h-6 text-secondary-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                            <p class="text-slate-400 text-sm">Крупные проекты и корпорации</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">от 80 000₽</span>
+                            <span class="text-slate-400">/проект</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Все из тарифа Бизнес</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>AI и машинное обучение</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Микросервисная архитектура</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Load balancing</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>Персональный менеджер</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300">
+                                <i data-feather="check" class="w-5 h-5 text-secondary-500 flex-shrink-0"></i>
+                                <span>SLA и 24/7 поддержка</span>
+                            </li>
+                        </ul>
+                        <button onclick="openCaptchaModal()" class="w-full py-4 bg-slate-700 hover:bg-slate-600 rounded-xl font-semibold transition-colors">
+                            Обсудить проект
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Services -->
+        <section class="container mx-auto px-6 mb-24">
+            <h2 class="text-3xl font-bold mb-12 text-center">Дополнительные услуги</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:border-primary-500/50 transition-colors group">
+                    <i data-feather="refresh-cw" class="w-8 h-8 text-primary-400 mb-4 group-hover:rotate-180 transition-transform duration-500"></i>
+                    <h4 class="font-semibold mb-2">Модерация чатов</h4>
+                    <p class="text-sm text-slate-400 mb-3">Автоматическая фильтрация спама и управление сообществом</p>
+                    <span class="text-primary-400 font-semibold">от 8 000₽</span>
+                </div>
+                
+                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:border-secondary-500/50 transition-colors group">
+                    <i data-feather="shopping-cart" class="w-8 h-8 text-secondary-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-semibold mb-2">Интернет-магазин</h4>
+                    <p class="text-sm text-slate-400 mb-3">Полноценный магазин с каталогом, корзиной и оплатой</p>
+                    <span class="text-secondary-400 font-semibold">от 25 000₽</span>
+                </div>
+                
+                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:border-primary-500/50 transition-colors group">
+                    <i data-feather="bar-chart-2" class="w-8 h-8 text-primary-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-semibold mb-2">Аналитика</h4>
+                    <p class="text-sm text-slate-400 mb-3">Сбор статистики, отчеты и визуализация данных</p>
+                    <span class="text-primary-400 font-semibold">от 12 000₽</span>
+                </div>
+                
+                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:border-secondary-500/50 transition-colors group">
+                    <i data-feather="globe" class="w-8 h-8 text-secondary-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-semibold mb-2">Интеграция API</h4>
+                    <p class="text-sm text-slate-400 mb-3">Подключение внешних сервисов и CRM систем</p>
+                    <span class="text-secondary-400 font-semibold">от 10 000₽</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Как мы работаем</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-secondary-500"></div>
+                    
+                    <div class="relative flex gap-8 mb-12">
+                        <div class="w-16 h-16 bg-slate-800 border-2 border-primary-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+                            <span class="text-2xl font-bold text-primary-400">1</span>
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-xl font-semibold mb-2">Обсуждение проекта</h3>
+                            <p class="text-slate-400">Анализируем ваши требования, предлагаем решения и составляем техническое задание</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex gap-8 mb-12">
+                        <div class="w-16 h-16 bg-slate-800 border-2 border-primary-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+                            <span class="text-2xl font-bold text-primary-400">2</span>
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-xl font-semibold mb-2">Проектирование</h3>
+                            <p class="text-slate-400">Создаем архитектуру, дизайн интерфейсов и согласовываем с вами</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex gap-8 mb-12">
+                        <div class="w-16 h-16 bg-slate-800 border-2 border-secondary-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+                            <span class="text-2xl font-bold text-secondary-400">3</span>
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-xl font-semibold mb-2">Разработка</h3>
+                            <p class="text-slate-400">Пишем код, проводим тестирование и отладку функционала</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex gap-8">
+                        <div class="w-16 h-16 bg-slate-800 border-2 border-secondary-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+                            <span class="text-2xl font-bold text-secondary-400">4</span>
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-xl font-semibold mb-2">Запуск и поддержка</h3>
+                            <p class="text-slate-400">Размещаем на сервере, обучаем персонал и обеспечиваем работоспособность</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+    <custom-captcha-modal></custom-captcha-modal>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/captcha-modal.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
