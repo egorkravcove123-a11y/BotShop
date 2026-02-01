@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - BotCraft Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        secondary: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary-500 selection:text-white">
+    
+    <custom-navbar></custom-navbar>
+
+    <main class="pt-24 pb-12">
+        <!-- Header -->
+        <section class="container mx-auto px-6 mb-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6">Наши проекты</h1>
+                <p class="text-xl text-slate-400">Примеры реализованных ботов различной сложности — от простых уведомлений до сложных экосистем</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="container mx-auto px-6 mb-24">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/technology/640x360/42" alt="ShopBot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-primary-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                            E-commerce
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors">MegaShop Bot</h3>
+                        <p class="text-slate-400 text-sm mb-4">Полноценный интернет-магазин в Telegram с каталогом, корзиной, оплатой картой и админ-панелью.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Redis</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <i data-feather="users" class="w-4 h-4"></i>
+                                <span>12,000+ пользователей</span>
+                            </div>
+                            <button onclick="openCaptchaModal()" class="text-primary-400 hover:text-primary-300 text-sm font-semibold flex items-center gap-1">
+                                Заказать похожий
+                                <i data-feather="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-secondary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-500/10">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/office/640x360/88" alt="CRM Bot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-secondary-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                            Автоматизация
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-400 transition-colors">CRM Assistant</h3>
+                        <p class="text-slate-400 text-sm mb-4">Интеграция с Bitrix24. Уведомления о сделках, задачах, создание отчетов прямо в Telegram.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Node.js</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">REST API</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Webhook</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <i data-feather="briefcase" class="w-4 h-4"></i>
+                                <span>50+ компаний</span>
+                            </div>
+                            <button onclick="openCaptchaModal()" class="text-secondary-400 hover:text-secondary-300 text-sm font-semibold flex items-center gap-1">
+                                Заказать похожий
+                                <i data-feather="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/gaming/640x360/15" alt="Game Bot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                            Развлечения
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors">QuizMaster</h3>
+                        <p class="text-slate-400 text-sm mb-4">Интерактивная викторина с рейтингом, достижениями, мультиплеером и системой наград.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">MongoDB</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">AI</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <i data-feather="trophy" class="w-4 h-4"></i>
+                                <span>500+ игр/день</span>
+                            </div>
+                            <button onclick="openCaptchaModal()" class="text-primary-400 hover:text-primary-300 text-sm font-semibold flex items-center gap-1">
+                                Заказать похожий
+                                <i data-feather="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-secondary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-500/10">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/finance/640x360/77" alt="Crypto Bot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-yellow-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-slate-900">
+                            Финансы
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-400 transition-colors">CryptoAlert</h3>
+                        <p class="text-slate-400 text-sm mb-4">Отслеживание криптовалютных цен, алерты на изменения, аналитика портфеля, интеграция с биржами.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Node.js</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">WebSocket</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Chart.js</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <i data-feather="activity" class="w-4 h-4"></i>
+                                <span>Real-time данные</span>
+                            </div>
+                            <button onclick="openCaptchaModal()" class="text-secondary-400 hover:text-secondary-300 text-sm font-semibold flex items-center gap-1">
+                                Заказать похожий
+                                <i data-feather="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/10">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/education/640x360/33" alt="Edu Bot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                            Образование
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors">EduHelper</h3>
+                        <p class="text-slate-400 text-sm mb-4">Платформа для онлайн-обучения: уроки, тесты, проверка заданий, расписание, геймификация.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Django</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Celery</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <i data-feather="book-open" class="w-4 h-4"></i>
+                                <span>10,000+ студентов</span>
+                            </div>
+                            <button onclick="openCaptchaModal()" class="text-primary-400 hover:text-primary-300 text-sm font-semibold flex items-center gap-1">
+                                Заказать похожий
+                                <i data-feather="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="group relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-secondary-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-500/10">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/restaurant/640x360/55" alt="Food Bot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-orange-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                            HoReCa
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-secondary-400 transition-colors">FoodDelivery</h3>
+                        <p class="text-slate-400 text-sm mb-4">Заказ еды из ресторанов: меню, корзина, оплата, отслеживание курьера, отзывы.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Yandex Maps API</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Payments</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <i data-feather="truck" class="w-4 h-4"></i>
+                                <span>Доставка 24/7</span>
+                            </div>
+                            <button onclick="openCaptchaModal()" class="text-secondary-400 hover:text-secondary-300 text-sm font-semibold flex items-center gap-1">
+                                Заказать похожий
+                                <i data-feather="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="container mx-auto px-6 mb-24">
+            <div class="bg-gradient-to-r from-primary-900/50 to-secondary-900/50 rounded-3xl p-8 lg:p-12 border border-slate-700">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 mb-2">50+</div>
+                        <div class="text-slate-400">Завершенных проектов</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 mb-2">98%</div>
+                        <div class="text-slate-400">Довольных клиентов</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 mb-2">3 года</div>
+                        <div class="text-slate-400">На рынке</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 mb-2">24/7</div>
+                        <div class="text-slate-400">Поддержка</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+    <custom-captcha-modal></custom-captcha-modal>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/captcha-modal.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
